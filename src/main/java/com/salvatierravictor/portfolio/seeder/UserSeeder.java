@@ -1,7 +1,7 @@
 package com.salvatierravictor.portfolio.seeder;
 
 import com.salvatierravictor.portfolio.auth.entity.UserEntity;
-import com.salvatierravictor.portfolio.entity.RoleEntity;
+import com.salvatierravictor.portfolio.model.RoleEntity;
 import com.salvatierravictor.portfolio.repository.RoleRepository;
 import com.salvatierravictor.portfolio.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

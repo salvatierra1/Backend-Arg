@@ -1,12 +1,10 @@
 package com.salvatierravictor.portfolio.auth.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Setter
-@Getter
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class AuthenticationResponse {
 
     private String jwt;

@@ -1,9 +1,8 @@
 package com.salvatierravictor.portfolio.auth.entity;
 
 
-import com.salvatierravictor.portfolio.entity.RoleEntity;
-import lombok.Getter;
-import lombok.Setter;
+import com.salvatierravictor.portfolio.model.RoleEntity;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,9 +15,10 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "user")
-@Setter
-@Getter
 public class UserEntity implements UserDetails {
 
     @Id
@@ -33,13 +33,6 @@ public class UserEntity implements UserDetails {
     private boolean accountNonLocked;
     private boolean credentialsNonExpired;
     private boolean enabled;
-
-    public UserEntity() {
-        this.accountNonExpired = true;
-        this.accountNonLocked = true;
-        this.credentialsNonExpired = true;
-        this.enabled = true;
-    }
 
     @ManyToMany(
             cascade = {
