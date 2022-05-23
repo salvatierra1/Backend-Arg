@@ -1,7 +1,6 @@
 package com.salvatierravictor.portfolio.dto;
 
-import com.salvatierravictor.portfolio.model.Education;
-import com.salvatierravictor.portfolio.model.Skills;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

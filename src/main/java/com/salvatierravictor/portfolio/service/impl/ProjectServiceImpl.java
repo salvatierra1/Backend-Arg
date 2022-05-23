@@ -50,15 +50,16 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public ProjectDTO editByIdProject(Long id, ProjectDTO edit) {
-        Project project = this.getProfileEdit(id);
+        Project project = this.getProjectEdit(id);
         project.setName(edit.getName());
         project.setInformation(edit.getInformation());
         project.setImageUrl(edit.getImageUrl());
+        project.setRepoUrl(edit.getRepoUrl());
         Project editProject = projectRepository.save(project);
         return projectMapper.projectEntity2Dto(editProject);
     }
 
-    Project getProfileEdit(Long id) {
+    Project getProjectEdit(Long id) {
         Optional<Project> project = projectRepository.findById(id);
         return project.get();
     }

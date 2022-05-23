@@ -23,4 +23,7 @@ public class ProjectDTO {
     @NotNull(message = "The imageUrl cannot be empty")
     private String imageUrl;
 
+    @NotNull(message = "The repoUrl cannot be empty")
+    private String repoUrl;
+
 }

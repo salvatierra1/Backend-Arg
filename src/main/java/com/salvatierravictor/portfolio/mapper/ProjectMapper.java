@@ -17,6 +17,7 @@ public class ProjectMapper {
         project.setName(projectDTO.getName());
         project.setInformation(projectDTO.getInformation());
         project.setImageUrl(projectDTO.getImageUrl());
+        project.setRepoUrl(projectDTO.getRepoUrl());
         return project;
     }
 
@@ -26,6 +27,7 @@ public class ProjectMapper {
         projectDTO.setName(project.getName());
         projectDTO.setInformation(project.getInformation());
         projectDTO.setImageUrl(project.getImageUrl());
+        projectDTO.setRepoUrl(project.getRepoUrl());
         return projectDTO;
     }
 

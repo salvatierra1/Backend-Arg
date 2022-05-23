@@ -43,13 +43,12 @@ public class AboutServiceImpl implements AboutService {
 
     @Override
     public AboutDTO editByIdAbout(Long id, AboutDTO edit) {
-        About about = this.getProfileEdit(id);
+        About about = this.getAboutEdit(id);
         about.setInformation(edit.getInformation());
-        About editAbout = aboutRepository.save(about);
-        return aboutMapper.aboutEntity2Dto(editAbout);
+        return aboutMapper.aboutEntity2Dto(aboutRepository.save(about));
     }
 
-    About getProfileEdit(Long id) {
+    About getAboutEdit(Long id) {
         Optional<About> about = aboutRepository.findById(id);
         return about.get();
     }
@@ -58,7 +57,5 @@ public class AboutServiceImpl implements AboutService {
     public void delete(Long id) {
         aboutRepository.deleteById(id);
     }
-
-
 
 }

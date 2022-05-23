@@ -34,9 +34,6 @@ public class Skills {
     @NotNull(message = "The percentage cannot be empty")
     private int percentage;
 
-    @NotNull(message = "The imageUrl cannot be empty")
-    private String imageUrl;
-
     @CreationTimestamp
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     @Column(name = "creation_date")
@@ -47,6 +44,4 @@ public class Skills {
     @Column(name = "update_date")
     private LocalDateTime updateDate;
 
-    public Skills(String name, String imageUrl, int percentage) {
-    }
 }

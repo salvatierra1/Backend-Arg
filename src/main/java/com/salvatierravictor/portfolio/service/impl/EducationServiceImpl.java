@@ -2,7 +2,6 @@ package com.salvatierravictor.portfolio.service.impl;
 
 import com.salvatierravictor.portfolio.dto.EducationDTO;
 import com.salvatierravictor.portfolio.mapper.EducationMapper;
-import com.salvatierravictor.portfolio.model.About;
 import com.salvatierravictor.portfolio.model.Education;
 import com.salvatierravictor.portfolio.model.Profile;
 import com.salvatierravictor.portfolio.repository.EducationRepository;
@@ -50,6 +49,17 @@ public class EducationServiceImpl implements EducationService {
 
     @Override
     public EducationDTO editByIdEducation(Long id, EducationDTO edit) {
-        return null;
+        Education education = this.getEducationEdit(id);
+        education.setInstitute(edit.getInstitute());
+        education.setTitle(edit.getTitle());
+        education.setStartDate(educationMapper.String2LocalDate(edit.getStartDate()));
+        education.setFinishDate(educationMapper.String2LocalDate(edit.getFinishDate()));
+        education.setImageUrl(edit.getImageUrl());
+        return educationMapper.educationEntity2Dto(educationRepository.save(education));
+    }
+
+    private Education getEducationEdit(Long id) {
+        Optional<Education> education = educationRepository.findById(id);
+        return education.get();
     }
 }

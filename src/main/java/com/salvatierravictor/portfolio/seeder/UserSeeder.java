@@ -1,7 +1,11 @@
 package com.salvatierravictor.portfolio.seeder;
 
 import com.salvatierravictor.portfolio.auth.entity.UserEntity;
+import com.salvatierravictor.portfolio.model.About;
+import com.salvatierravictor.portfolio.model.Profile;
 import com.salvatierravictor.portfolio.model.RoleEntity;
+import com.salvatierravictor.portfolio.repository.AboutRepository;
+import com.salvatierravictor.portfolio.repository.ProfileRepository;
 import com.salvatierravictor.portfolio.repository.RoleRepository;
 import com.salvatierravictor.portfolio.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +13,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -22,9 +27,14 @@ public class UserSeeder implements CommandLineRunner {
     @Autowired
     private RoleRepository roleRepository;
 
+    @Autowired
+    private ProfileRepository profileRepository;
+
     @Override
     public void run(String... args) throws Exception {
         loadUser();
+        loadProfile();
+
     }
 
     private void loadUser() {
@@ -33,6 +43,11 @@ public class UserSeeder implements CommandLineRunner {
         }
     }
 
+    private void loadProfile() {
+        if(profileRepository.count() == 0){
+           loadUserProfile();
+        }
+    }
 
     private void loadUserEntity() {
 
@@ -59,4 +74,23 @@ public class UserSeeder implements CommandLineRunner {
         );
         userRepository.save(user);
     }
+
+    private void loadUserProfile() {
+        createProfile("Salvatierra Victor","Developer Java", "Ushuaia", "https://acortar.link/RCOXiu");
+
+    }
+
+    private void createProfile(String name, String title, String location, String imageUrl) {
+
+        Profile profile = new Profile(
+                name,
+                title,
+                location,
+                imageUrl
+
+        );
+        profileRepository.save(profile);
+    }
+
+
 }

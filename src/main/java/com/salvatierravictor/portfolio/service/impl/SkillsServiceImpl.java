@@ -48,15 +48,14 @@ public class SkillsServiceImpl implements SkillsService {
 
     @Override
     public SkillsDTO editByIdSkills(Long id, SkillsDTO edit) {
-        Skills skills = this.getProfileEdit(id);
+        Skills skills = this.getSkillsEdit(id);
         skills.setName(edit.getName());
         skills.setPercentage(edit.getPercentage());
-        skills.setImageUrl(edit.getImageUrl());
         Skills editSkills = skillsRepository.save(skills);
         return skillsMapper.skillsEntity2Dto(editSkills);
     }
 
-    Skills getProfileEdit(Long id) {
+    Skills getSkillsEdit(Long id) {
         Optional<Skills> skills = skillsRepository.findById(id);
         return skills.get();
     }

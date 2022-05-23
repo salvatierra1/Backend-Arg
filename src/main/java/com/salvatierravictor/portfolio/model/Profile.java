@@ -84,5 +84,9 @@ public class Profile {
     private LocalDateTime updateDate;
 
     public Profile(String name, String title, String location, String imageUrl) {
+        this.name = name;
+        this.title = title;
+        this.location = location;
+        this.imageUrl = imageUrl;
     }
 }

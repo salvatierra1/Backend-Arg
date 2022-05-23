@@ -12,7 +12,6 @@ public class SkillsMapper {
 
     public Skills skillsDTO2Entity(SkillsDTO skillsDTO) {
         Skills skills = new Skills();
-        skills.setImageUrl(skillsDTO.getImageUrl());
         skills.setName(skillsDTO.getName());
         skills.setPercentage(skillsDTO.getPercentage());
         return skills;
@@ -21,7 +20,6 @@ public class SkillsMapper {
     public SkillsDTO skillsEntity2Dto(Skills skills) {
         SkillsDTO skillsDTO = new SkillsDTO();
         skillsDTO.setId(skills.getId());
-        skillsDTO.setImageUrl(skills.getImageUrl());
         skillsDTO.setName(skills.getName());
         skillsDTO.setPercentage(skills.getPercentage());
         return skillsDTO;

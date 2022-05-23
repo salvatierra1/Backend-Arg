@@ -37,6 +37,9 @@ public class Project {
     @NotNull(message = "The imageUrl cannot be empty")
     private String imageUrl;
 
+    @NotNull(message = "The repoUrl cannot be empty")
+    private String repoUrl;
+
     @CreationTimestamp
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     @Column(name = "creation_date")

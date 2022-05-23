@@ -19,8 +19,5 @@ public class SkillsDTO {
     @NotNull(message = "The percentage cannot be empty")
     private int percentage;
 
-    @NotNull(message = "The imageUrl cannot be empty")
-    private String imageUrl;
-
 
 }
