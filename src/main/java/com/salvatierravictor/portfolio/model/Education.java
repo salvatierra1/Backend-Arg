@@ -46,8 +46,4 @@ public class Education {
     @DateTimeFormat(pattern = "yyyy/MM/dd")
     private LocalDate finishDate;
 
-
-    public Education(String institute, String title, String toString, String toString1, String imageUrl) {
-
-    }
 }
