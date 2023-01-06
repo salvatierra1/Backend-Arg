@@ -22,16 +22,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="profile")
-@SQLDelete(sql = "UPDATE profile SET deleted = true WHERE id=?")
-@Where(clause = "deleted = false")
 public class Profile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private Long id;
-
-    private boolean deleted = Boolean.FALSE;
 
     @NotNull(message = "The name cannot be empty")
     private String name;
