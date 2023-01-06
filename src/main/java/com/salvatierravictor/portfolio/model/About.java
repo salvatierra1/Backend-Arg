@@ -17,15 +17,12 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="about")
-@SQLDelete(sql = "UPDATE about SET deleted = true WHERE id=?")
-@Where(clause = "deleted = false")
 public class About {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private boolean deleted = Boolean.FALSE;
 
     @NotNull(message = "The information cannot be empty")
     private String information;

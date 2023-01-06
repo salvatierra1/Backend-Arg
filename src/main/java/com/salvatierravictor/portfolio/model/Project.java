@@ -17,8 +17,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="project")
-@SQLDelete(sql = "UPDATE project SET deleted = true WHERE id=?")
-@Where(clause = "deleted = false")
 public class Project {
 
 
@@ -26,7 +24,6 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private boolean deleted = Boolean.FALSE;
 
     @NotNull(message = "The name cannot be empty")
     private String name;

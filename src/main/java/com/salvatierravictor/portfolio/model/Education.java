@@ -19,15 +19,12 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="education")
-@SQLDelete(sql = "UPDATE education SET deleted = true WHERE id=?")
-@Where(clause = "deleted = false")
+
 public class Education {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private boolean deleted = Boolean.FALSE;
 
     @NotNull(message = "The institute cannot be empty")
     private String institute;
