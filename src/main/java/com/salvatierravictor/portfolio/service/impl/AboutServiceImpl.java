@@ -8,6 +8,7 @@ import com.salvatierravictor.portfolio.repository.AboutRepository;
 import com.salvatierravictor.portfolio.repository.ProfileRepository;
 import com.salvatierravictor.portfolio.service.AboutService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

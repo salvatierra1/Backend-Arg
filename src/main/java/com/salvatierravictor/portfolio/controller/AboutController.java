@@ -13,7 +13,6 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("about")
-@CrossOrigin(origins = "https://portfolio-8d6ba.web.app")
 public class AboutController {
 
     @Autowired
